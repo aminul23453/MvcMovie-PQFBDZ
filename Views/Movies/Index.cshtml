@@ -59,29 +59,31 @@
             <th>Release Date</th>
             <th>Genre</th>
             <th>Price</th>
+            <th>Rating</th>
             <th>Actions</th>
         </tr>
     </thead>
 
-    <tbody>
-        @foreach (var item in Model.Movies)
-        {
-            <tr>
-                <td>@Html.DisplayFor(_ => item.Title)</td>
-                <td>@Html.DisplayFor(_ => item.ReleaseDate)</td>
-                <td>@Html.DisplayFor(_ => item.Genre)</td>
-                <td>@Html.DisplayFor(_ => item.Price)</td>
-                <td>
-                    <a asp-action="Edit"
-                       asp-route-id="@item.Id">Edit</a>
-                    |
-                    <a asp-action="Details"
-                       asp-route-id="@item.Id">Details</a>
-                    |
-                    <a asp-action="Delete"
-                       asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+  <tbody>
+    @foreach (var item in Model.Movies)
+    {
+        <tr>
+            <td>@Html.DisplayFor(_ => item.Title)</td>
+            <td>@Html.DisplayFor(_ => item.ReleaseDate)</td>
+            <td>@Html.DisplayFor(_ => item.Genre)</td>
+            <td>@Html.DisplayFor(_ => item.Price)</td>
+            <td>@Html.DisplayFor(_ => item.Rating)</td>
+            <td>
+                <a asp-action="Edit"
+                   asp-route-id="@item.Id">Edit</a>
+                |
+                <a asp-action="Details"
+                   asp-route-id="@item.Id">Details</a>
+                |
+                <a asp-action="Delete"
+                   asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</tbody>
 </table>
